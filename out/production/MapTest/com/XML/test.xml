@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<student>
+    <name>admin</name>
+    <sex>01</sex>
+    <info>
+        <span>1339090</span>
+        <span>133</span>
+    </info>
+<!--  输入CD 然后enter -->
+<!--    <![CDATA[-->
+<!--    此处可以写任意内容，不需要担心冲突-->
+<!--    ]]>-->
+</student>

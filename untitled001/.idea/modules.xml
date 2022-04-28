@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/concatMSG/concatMSG.iml" filepath="$PROJECT_DIR$/concatMSG/concatMSG.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k1/k1.iml" filepath="$PROJECT_DIR$/k1/k1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k10/k10.iml" filepath="$PROJECT_DIR$/k10/k10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k11/k11.iml" filepath="$PROJECT_DIR$/k11/k11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k12-interface/k12-interface.iml" filepath="$PROJECT_DIR$/k12-interface/k12-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k13/k13.iml" filepath="$PROJECT_DIR$/k13/k13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k12-interface/k13-interface.iml" filepath="$PROJECT_DIR$/k12-interface/k13-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k14/k14.iml" filepath="$PROJECT_DIR$/k14/k14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k15/k15.iml" filepath="$PROJECT_DIR$/k15/k15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k16/k16.iml" filepath="$PROJECT_DIR$/k16/k16.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k17/k17.iml" filepath="$PROJECT_DIR$/k17/k17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k18/k18.iml" filepath="$PROJECT_DIR$/k18/k18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k19/k19.iml" filepath="$PROJECT_DIR$/k19/k19.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k2/k2.iml" filepath="$PROJECT_DIR$/k2/k2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k20/k20.iml" filepath="$PROJECT_DIR$/k20/k20.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k21/k21.iml" filepath="$PROJECT_DIR$/k21/k21.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k22/k22.iml" filepath="$PROJECT_DIR$/k22/k22.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k23/k23.iml" filepath="$PROJECT_DIR$/k23/k23.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k24-error/k24-error.iml" filepath="$PROJECT_DIR$/k24-error/k24-error.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k25-collectionTest/k25-collectionTest.iml" filepath="$PROJECT_DIR$/k25-collectionTest/k25-collectionTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k26-ListTest/k26-ListTest.iml" filepath="$PROJECT_DIR$/k26-ListTest/k26-ListTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k27-treeSetDemo/k27-treeSetDemo.iml" filepath="$PROJECT_DIR$/k27-treeSetDemo/k27-treeSetDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k28-randomTest/k28-randomTest.iml" filepath="$PROJECT_DIR$/k28-randomTest/k28-randomTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k29-typeTest/k29-typeTest.iml" filepath="$PROJECT_DIR$/k29-typeTest/k29-typeTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k3/k3.iml" filepath="$PROJECT_DIR$/k3/k3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k30-TypeFun/k30-TypeFun.iml" filepath="$PROJECT_DIR$/k30-TypeFun/k30-TypeFun.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k31-TypeInterface/k31-TypeInterface.iml" filepath="$PROJECT_DIR$/k31-TypeInterface/k31-TypeInterface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k32-MapTest/k32-MapTest.iml" filepath="$PROJECT_DIR$/k32-MapTest/k32-MapTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k33-collectionsTest/k33-collectionsTest.iml" filepath="$PROJECT_DIR$/k33-collectionsTest/k33-collectionsTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k34-collectionsDemo/k34-collectionsDemo.iml" filepath="$PROJECT_DIR$/k34-collectionsDemo/k34-collectionsDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k4/k4.iml" filepath="$PROJECT_DIR$/k4/k4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k5/k5.iml" filepath="$PROJECT_DIR$/k5/k5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k5Plus/k5Plus.iml" filepath="$PROJECT_DIR$/k5Plus/k5Plus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k6/k6.iml" filepath="$PROJECT_DIR$/k6/k6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k7/k7.iml" filepath="$PROJECT_DIR$/k7/k7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k8/k8.iml" filepath="$PROJECT_DIR$/k8/k8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k9/k9.iml" filepath="$PROJECT_DIR$/k9/k9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/k9Plus/k9Plus.iml" filepath="$PROJECT_DIR$/k9Plus/k9Plus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tencentLesson001/tencentLesson001.iml" filepath="$PROJECT_DIR$/tencentLesson001/tencentLesson001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/untitled001.iml" filepath="$PROJECT_DIR$/untitled001.iml" />
+    </modules>
+  </component>
+</project>

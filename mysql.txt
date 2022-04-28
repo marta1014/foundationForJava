@@ -1,0 +1,517 @@
+mysql
+
+登录参数
+
+连接  mysql -u用户名 -p密码 -h要链接的mysql服务器ip地址（默认127.0.0.1） -p端口号（默认3306）
+
+最好加 -A => 当我们打开数据库，即use dbname时，要预读数据库信息，当使用-A参数时，就不预读数据库信息
+
+
+
+sql
+
+** 不区分大小可 分号结尾
+
+注释
+
+** 单行注释	-- 注释内容 or #注释内容（mysql特有）
+
+** 多行注释	/* 注释内容 */
+
+
+DDL 数据定义语言 定义数据库对象：数据库，表，列
+
+DML 数据操作语言 对数据库的表进行增删改查
+
+DQL 数据查询语言 查询数据库表中的数据记录
+
+DCL 数据控制语言 定义访问权限以及安全级别，创建用户
+
+
+-- DDL之操作数据库
+
+* 查询
+
+SHOW DATABASES;
+
+* 创建数据库
+
+CREATE DATABSE 数据库名称;
+
+CREATE DATABASE IF NOT EXISTS 数据库名称; => 不存在则创建
+
+* 删除数据库
+
+DROP DATABASE 数据库名称;
+
+DROP DATABASE IF EXISTS 数据库名称; => 存在则删除
+
+* 使用数据库
+
+SELECE DATABASE(); => 查看当前使用的数据库
+
+USE 数据库名称; => 使用数据库
+
+
+
+****数据类型****
+
+
+
+数值类型 
+TINYINT
+SMALLINT 
+MEDIUMINT 大整数值
+INT || INTEGER 大整数值
+BIGINT 极大整数值
+FLOAT 单精度浮点数值
+DOUBLE 双精度浮点数值 template => score double(数位总长度，保留几位) 
+DECIMAL 小数值
+
+
+时间和日期类型
+
+DATE 日期值
+TIME 时间值或持续时间
+YEAR 年份值
+DATETIME 混和日期和时间值
+TIMESTAMP 时间戳
+
+
+字符串类型
+
+CHAR 定长
+VARCHAR 变长
+TINYBLOB 不超过255字节的二进制字符串
+TINYTEXT 短文本
+BOLB 二进制形式的长文本
+TEXT 长文本
+MIDIUMBOLB 二进制形式的中等长度文本
+MEDIUMTEXT 中等长度的文本数据
+LONGBLOB 二进制形式极大长文吧
+LONGTEXT 极大文本
+
+
+-- DDL之操作表
+
+【创建Create】
+
+
+CREATE TABLE 表名称  (
+
+	字段名 数据类型1,
+	字段名 数据类型2,
+	字段名 数据类型3
+	...
+	id int,
+	userName varchar(20) 
+
+);
+
+
+【查询Retrive】
+
+SHOW TABLES;	=> 查询当前数据库下所有表名称
+
+
+DESC 表名称; 	=>  查询表结构
+
+
+【修改Update】
+
+ALTER TABLE 修改表名 RENAME TO 新的表名;
+
+
+添加一列 
+ALTER TABLE 表名 ADD 列名 数据类型;
+
+修改数据类型 
+ALTER TABLE 表名 MODIFY 列名 新数据类型;
+
+修改列名和数据类型
+ALTER TABLE 表名 CHANGE 列名 新列名 新数据类型;
+
+删除列
+ALTER TABLE 表名 DROP 列名;
+
+
+
+【删除Delete】
+
+DROP TABLE 表名;
+
+DROP TABLE IF EXISTS 表名;
+
+
+
+-- DML
+
+给指定列添加数据
+INSERT INTO 表名(列名1，列名2，...) VALUES(值1，值2，...); 
+
+Example => INSERT INFO USER(ID,NAME) VALUES(1001,'张三疯');
+
+给全部列添加数据
+INSERT INTO 表名 VALUES(值1，值2，...);
+Example => INSERT INFO USER(ID,NAME,...) VALUES(1001,'张三疯',...);
+
+批量添加数据
+INSERT INTO 表名(列名1，列名2，...) VALUES(值1，值2，...),(值1，值2，...)...;
+
+Example => INSERT INFO USER(ID,NAME) VALUES(1001,'张三疯');
+
+INSERT INTO 表名 VALUES(值1，值2，...),(值1，值2，...)...;
+
+ 
+修改表数据
+
+UPDATE 表名 SET 列名1=值1，列名2=值1，... [WHERE 条件]; ** !!!如果不加where 条件，则将所有数据都修改
+
+example => UPDATE STUDENT SET sex='男', score='99.99' WHERE name = 'marta'; 
+
+
+删除表数据
+
+DELETE FROM 表名 [WHERE 条件]
+
+
+
+
+-- DQL
+
+基础查询
+
+SELECT 字段列表 FROM 表名列表
+
+example => select name, age from teachers; || select * from '8000000301';
+
+去重 distinct 
+查询并去除重复记录 select distinct address from city; => distinct关键字实现去重 
+
+别名 AS
+As 关键字实现展示改名以提高阅读性 example select age as 年龄 from student;
+
+条件查询
+
+example 
+
+select * from student where age >= 22; || age = 12;  
+或者使用 || 或 or 最简单方式 select * from student where age in (22,34,35);
+
+select * from student where age between 20 and 30; || between '1990-02-22' and '2009-03-09';
+
+查询 是否是null 使用 is 或者 is not => select * from student where id is null;
+
+条件： >,<,>=,<=,=,<> 或 !=,between .. and  ., in (...),
+like 占位符, is null ,is not null, and 或 && , or 或 ||,not 或 !
+
+LIKE 模糊查询
+
+Select * from teacher where name like '马%';   => _代表单个任意字符 %代表任意多个字符;
+
+排序查询 ORDER BY
+ 
+语法 SELECT 字段列表 FROM 表名 ORDER BY 排序字段名1[排序方式1],排序字段名2[排序方式2]...;
+排序方式： ASC 升序(默认) DESC 降序
+！！ 如果有多个排序条件 当前面的条件值一样时 才会根据第二个条件进行排序
+
+select * from teacher order by age dsc;
+
+Example 查询学生信息 按照数学成绩降序排列，如果数学成绩一样，则英语成绩按照升序排序
+
+select * from student order by desc, English asc; 
+
+
+分组查询 group by
+
+聚合函数概念 将一列作为一个整体进行纵向计算
+
+聚合函数分类 count(列名) max(列名) min(列名) sum(列名) avg(列名) => 统计数量，最大值，最小值，求和，平均值
+
+聚合函数查询语法 select 聚合函数名(age) from 表名; null值不参与聚合函数的运算;
+
+分组查询语法
+
+select 字段列表 from 表名 [where 分组前条件限定] group by 分组字段名 [having 分组后条件过滤];
+
+注意 分组后，查询的字段为聚合函数和分组字段，查询其他字段无任何意义
+
+where 和 having 区别
+
+- 执行时机不同 where 是分组之前进行限定，不满足where则不参与分组，having是分组后对结果进行过滤
+- 可判断条件不同，where不能对聚合函数进行判断 having则可以
+
+select sex,avg(math) from student group by sex;
+
+
+分页查询 LIMIT
+
+select * from teacher limit 6,3; -- 起始索引 = （当前页码 - 1）* 每页条数
+
+
+tip: limit是mysql方言，oracle使用rownumber，sql server 使用top
+
+
+
+
+
+约束
+
+
+约束名称		关键字		描述
+
+
+非空约束		NOT NULL		保证列中所有数据不能有空值
+唯一约束		UNIQUE		保证列中所有数据各不相同
+主键约束		PRIMARY KEY	主键是一行数据的唯一标识 要求非空且唯一
+检查约束		CHECK		保证列中的值满足某一条件
+默认约束		DEFAULT		保存数据时 未指定值则采用默认值
+外键约束		FOREIGN KEY	用来让两个表的数据建立链接 保证数据的一致性完整性
+
+!Mysql不支持检查约束
+
+
+
+Example
+
+drop table if EXISTS temp;
+
+create table temp(
+	id int PRIMARY KEY auto_increment, -- auto_increment 自增长 ** 需数字类型且唯一修饰
+	name VARCHAR(64) UNIQUE NOT NULL,
+	salary DOUBLE(7,2) DEFAULT 5800
+
+);
+
+
+
+
+DROP TABLE
+IF EXISTS emp;
+
+DROP TABLE
+IF EXISTS dept;
+
+CREATE TABLE dept (
+	id INT PRIMARY KEY auto_increment,
+	dept_name VARCHAR (20),
+	address VARCHAR (20)
+);
+
+CREATE TABLE emp (
+	id INT PRIMARY KEY auto_increment,
+	NAME VARCHAR (64) UNIQUE NOT NULL,
+	age INT,
+	dept_id INT,
+	constraint emp_dept foreign key(dept_id) references dept(id)
+);
+
+INSERT INTO dept (dept_name, address)
+VALUES
+	('研发部', '广州'),
+	('销售部', '深圳');
+
+INSERT INTO emp (NAME, age, dept_id)
+VALUES
+	('张三', 20, 1),
+	('李久', 32, 2),
+	('牛德华', 19, 2),
+	('周四汗', 21, 1),
+	('黑龙', 20, 1);
+
+SELECT
+	*
+FROM
+	dept;
+
+/*
+外键约束
+
+创建时添加
+
+constraint 外键名称 foreign key(外键列名) reference 主表(主表列名)
+
+CREATE TABLE emp (
+	id INT PRIMARY KEY auto_increment,
+	NAME VARCHAR (64) UNIQUE NOT NULL,
+	age INT,
+	dept_id INT,
+    -- 添加外键 dept_id 和部门dept表的id主键实现关联
+	constraint emp_dept foreign key(dept_id) references dept(id)
+);
+
+
+逆向表到对象模型查看关系 点击左边栏 表 => 点击对象 shift选中对应表 右键 逆向表到模型
+
+建表后添加
+
+alter table 表名 add contraint 外键名称 foreign key (外键字段名称) refrence 主表(主表列名)
+
+
+删除约束
+
+alter table 表名 drop foreign key 外键名称;
+
+
+
+
+-- 多表查询
+
+
+连接查询
+
+
+内连接 => AB交集出局
+
+隐式格式 => select 字段列表 from 表1，表2，... where ...; 
+
+显式格式 => select 字段列表 from 表1 [inner] join 表2 on 条件; -- 主表内部关联表2 inner可省略。
+
+example => select * from amp inner join amp on amp.depId = cmpt.did; 
+
+
+
+
+外连接 
+
+左外连接=> A表所有数据和交集部分数据 
+
+语法 select 字段列表 from 表1 left [outer] join 表2 on 条件;
+
+
+
+右外连接 =>B表所有数据和交集部分数据
+
+语法 select 字段列表 from 表1 right [outer] join 表2 on 条件;
+
+
+
+子查询
+
+
+单行单列 子查询的位置作为条件值 使用 = != > < 等进行条件判断
+select 字段列表 from 表 where 字段名 = (子查询);
+
+多行单列 子查询的位置作为条件值 使用in等关键字进行条件判断
+select 字段列表 from 表 where 字段名 in (子查询);
+
+多行多列 作为虚拟表 
+select 字段列表 from (子查询) where 条件;
+
+
+
+
+-- 事务
+
+/*
+BEGIN; -- 开启事务
+
+COMMIT; -- 提交事务
+
+ROLLBACK; -- 回滚事务
+
+*/
+
+
+-- 事务状况模拟之转账
+-- 预先删除账户表
+DROP TABLE
+IF EXISTS account;
+
+-- 创建账户表
+CREATE TABLE account (
+	username VARCHAR (64),
+	money DOUBLE (17, 2),
+	id INT PRIMARY KEY auto_increment
+);
+
+-- 建立数据信息
+INSERT INTO account (username, money)
+VALUES
+	('张三', 2000),
+	('王武', 3000);
+
+SELECT
+	*
+FROM
+	account;
+
+-- 转账操作模拟
+
+
+-- 查询张三的金额 => 张三 -500  =>  王武 +500 
+
+BEGIN;
+
+UPDATE account set money = money - 500 where name = '张三';
+
+-- error 打开此处模拟出错
+
+UPDATE account set money = money + 500 where name = '王武  ';
+
+COMMIT;
+
+ROLLBACK;
+
+
+
+-- JDBC java语言操作关系性数据库的api 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
